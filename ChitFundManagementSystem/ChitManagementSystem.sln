@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALChitFundManagementSystem", "..\DALChitFundManagementSystem\DALChitFundManagementSystem.csproj", "{861E25BE-A196-43E7-B5D3-4805DE456BE9}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "PLChitFundManagementSystem", "http://localhost:5294", "{455C27E9-497D-4190-91F1-7DCEBF0998EE}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{bbd2445a-5a8b-471e-b3c1-de667d13ff2e}|BALChitFundManagementSystem.dll;{861e25be-a196-43e7-b5d3-4805de456be9}|DALChitFundManagementSystem.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_5294"
+		Debug.AspNetCompiler.PhysicalPath = "..\PLChitFundManagementSystem\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_5294\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_5294"
+		Release.AspNetCompiler.PhysicalPath = "..\PLChitFundManagementSystem\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_5294\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\PLChitFundManagementSystem\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BALChitFundManagementSystem", "..\BALChitFundManagementSystem\BALChitFundManagementSystem.csproj", "{BBD2445A-5A8B-471E-B3C1-DE667D13FF2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{861E25BE-A196-43E7-B5D3-4805DE456BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{861E25BE-A196-43E7-B5D3-4805DE456BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{861E25BE-A196-43E7-B5D3-4805DE456BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{861E25BE-A196-43E7-B5D3-4805DE456BE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{455C27E9-497D-4190-91F1-7DCEBF0998EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{455C27E9-497D-4190-91F1-7DCEBF0998EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{455C27E9-497D-4190-91F1-7DCEBF0998EE}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{455C27E9-497D-4190-91F1-7DCEBF0998EE}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{BBD2445A-5A8B-471E-B3C1-DE667D13FF2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBD2445A-5A8B-471E-B3C1-DE667D13FF2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBD2445A-5A8B-471E-B3C1-DE667D13FF2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBD2445A-5A8B-471E-B3C1-DE667D13FF2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

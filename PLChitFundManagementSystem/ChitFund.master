@@ -1,0 +1,709 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ChitFund.master.cs" Inherits="ChitFund" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <link href="css/table.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+            </asp:ContentPlaceHolder>
+    <style type="text/css">
+        @font-face {
+            font-family: Yanone Kaffeesatz;
+            src: url('../fonts/YanoneKaffeesatz-Regular.eot');
+            src: local("Yanone Kaffeesatz"), url('../fonts/YanoneKaffeesatz-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: News Cycle;
+            src: url('../fonts/NewsCycle-Regular.eot');
+            src: local("News Cycle"), url('../fonts/NewsCycle-Regular.ttf');
+        }
+
+        html {
+            height: 100%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* tell the browser to render HTML 5 elements as block */
+        article, aside, figure, footer, header, hgroup, nav, section {
+            display: block;
+        }
+
+        body {
+            font: normal .80em arial, sans-serif;
+            /*background: #fff url(../images/pattern.png) repeat;*/
+            color: #FFF;
+        }
+
+        p {
+            /*padding: 0 0 20px 0;*/
+            line-height: 1.7em;
+        }
+
+        img {
+            border: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #362C20;
+            letter-spacing: 0em;
+            padding: 0 0 5px 0;
+        }
+
+        h1, h2, h3 {
+            font: normal 140% arial, sans-serif;
+            margin: 0 0 15px 0;
+            padding: 15px 0 5px 0;
+            color: #FFF;
+        }
+
+        h2 {
+            font-size: 160%;
+            padding: 9px 0 5px 0;
+        }
+
+        h3 {
+            font-size: 140%;
+            padding: 5px 0 0 0;
+        }
+
+        h4, h6 {
+            color: #FFF;
+            padding: 0 0 5px 0;
+            font: normal 160% 'News Cycle', arial, sans-serif;
+        }
+
+        h5, h6 {
+            color: #555;
+            font: italic 95% arial, sans-serif;
+            letter-spacing: normal;
+            padding: 0 0 15px 0;
+        }
+
+        a, a:hover {
+            outline: none;
+            text-decoration: underline;
+            color: #09D4FF;
+        }
+
+            a:hover {
+                text-decoration: none;
+            }
+
+        blockquote {
+            margin: 20px 0;
+            padding: 10px 20px 0 20px;
+            border: 1px solid #E5E5DB;
+            background: #FFF;
+        }
+
+        ul {
+            margin: 2px 0 22px 17px;
+        }
+
+            ul li {
+                list-style-type: circle;
+                margin: 0 0 6px 0;
+                padding: 0 0 4px 5px;
+                line-height: 1.5em;
+            }
+
+        ol {
+            margin: 8px 0 22px 20px;
+        }
+
+            ol li {
+                margin: 0 0 11px 0;
+            }
+
+        .left {
+            float: left;
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .right {
+            float: right;
+            width: auto;
+            margin-left: 10px;
+        }
+
+        .center {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        #main, nav, #container, #logo, #site_content, footer {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #main {
+            margin: 5px auto;
+            width: 940px;
+            background: transparent;
+            padding-bottom: 30px;
+        }
+
+
+        header {
+            background: transparent;
+            height: 170px;
+            margin-bottom: 20px;
+        }
+
+        #logo {
+            width: 940px;
+            height: 110px;
+            background: transparent;
+            color: #888;
+            padding: 0;
+            float: left;
+        }
+
+            #logo h1, #logo h2 {
+                font: normal 320% 'News Cycle', arial, sans-serif;
+                border-bottom: 0;
+                text-transform: none;
+                margin: 0;
+            }
+
+        #logo_text h1, #logo_text h1 a, #logo_text h1 a:hover {
+            padding: 0;
+            color: #FFF;
+            text-decoration: none;
+        }
+
+            #logo_text h1 a .logo_colour {
+                color: #09D4FF;
+            }
+
+        #logo_text a:hover .logo_colour {
+            color: #09D4FF;
+        }
+
+        #logo_text h2 {
+            font-size: 140%;
+            padding: 0 0 0 0;
+            color: #FFF;
+        }
+
+        nav {
+            /*height: 44px;*/
+            width: 940px;
+            float: right;
+            margin: 0 auto 0 auto;
+            padding: 10px 0px;
+            color: #FFF;
+            background: #000;
+            border-radius: 7px 7px 7px 7px;
+            -moz-border-radius: 7px 7px 7px 7px;
+            -webkit-border: 7px 7px 7px 7px;
+        }
+
+        #site_content {
+            width: 940px;
+            overflow: hidden;
+            margin: 0 auto 0 auto;
+            padding: 0 0 15px 0;
+        }
+
+        #sidebar_container {
+            float: left;
+            width: 248px;
+            margin: 10px 0 0 0;
+        }
+
+        .sidebar {
+            float: right;
+            width: 220px;
+            margin: 0 0 17px 0;
+            background: #000;
+            border-radius: 7px 7px 7px 7px;
+            -moz-border-radius: 7px 7px 7px 7px;
+            -webkit-border: 7px 7px 7px 7px;
+            padding: 0 15px 5px 13px;
+        }
+
+            .sidebar h3, .content h1 {
+                padding: 0 15px 20px 0;
+                font: 230% 'News Cycle', arial, sans-serif;
+                text-shadow: #323232 1px 1px;
+                margin: 0 1px;
+                color: #FFF;
+            }
+
+            .sidebar h3 {
+                color: #FFF;
+                font: 250% 'News Cycle', arial, sans-serif;
+                padding: 0 15px 5px 0;
+            }
+
+            .sidebar ul {
+                margin: 0 0 15px 0;
+            }
+
+            .sidebar li a, .sidebar li a:hover {
+                color: #555;
+                text-decoration: none;
+            }
+
+                .sidebar li a:hover {
+                    text-decoration: underline;
+                }
+
+        .sidebar_item, .content_item {
+            padding: 15px 0;
+        }
+
+        .content {
+            text-align: left;
+            width: 670px;
+            float: right;
+            font-size: 120%;
+        }
+
+            .content ul {
+                margin: 2px 0 22px 0px;
+            }
+
+                .content ul li, .sidebar ul li {
+                    list-style-type: none;
+                    background: url(../images/bullet.png) no-repeat;
+                    margin: 0 0 0 0;
+                    padding: 0 0 4px 28px;
+                    line-height: 1.5em;
+                }
+
+        footer {
+            width: 940px;
+            font: 170% 'Yanone Kaffeesatz', arial, sans-serif;
+            height: 30px;
+            padding: 20px 0 20px 0;
+            text-align: center;
+        }
+
+            footer p {
+                line-height: 1.7em;
+                padding: 0 0 10px 0;
+                color: #FFF;
+            }
+
+            footer a {
+                color: #FFF;
+                text-decoration: 1px 1px #FFF;
+            }
+
+                footer a:hover {
+                    color: #FFF;
+                    text-shadow: none;
+                    text-decoration: underline;
+                }
+
+        .form_settings {
+            margin: 15px 0 0 0;
+        }
+
+            .form_settings p {
+                padding: 0 0 4px 0;
+            }
+
+            .form_settings span {
+                float: left;
+                width: 200px;
+                text-align: left;
+            }
+
+            .form_settings input, .form_settings textarea {
+                padding: 5px;
+                width: 299px;
+                font: 100% arial;
+                border: 1px solid #D5D5D5;
+                background: #FFF;
+                color: #47433F;
+                border-radius: 7px 7px 7px 7px;
+                -moz-border-radius: 7px 7px 7px 7px;
+                -webkit-border: 7px 7px 7px 7px;
+            }
+
+            .form_settings .submit {
+                font: 140% 'Yanone Kaffeesatz', arial, sans-serif;
+                border: 0;
+                width: 99px;
+                margin: 0 0 0 212px;
+                height: 33px;
+                padding: 2px 0 3px 0;
+                cursor: pointer;
+                background: #ddd; /* Show a solid color for older browsers */
+                background: -moz-linear-gradient(#fff, #ddd);
+                background: -o-linear-gradient(#fff, #ddd);
+                background: -webkit-linear-gradient(#fff, #ddd);
+                -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px;
+                -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px;
+                box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px;
+                border: 1px solid #ddd;
+                border-radius: 7px 7px 7px 7px;
+                -moz-border-radius: 7px 7px 7px 7px;
+                -webkit-border: 7px 7px 7px 7px;
+                color: #222;
+                text-shadow: 1px 1px #FFF;
+            }
+
+            .form_settings textarea, .form_settings select {
+                font: 100% arial;
+                width: 299px;
+            }
+
+            .form_settings select {
+                width: 310px;
+            }
+
+            .form_settings .checkbox {
+                margin: 4px 0;
+                padding: 0;
+                width: 14px;
+                border: 0;
+                background: none;
+            }
+
+        .separator {
+            width: 100%;
+            height: 0;
+            border-top: 1px solid #D9D5CF;
+            border-bottom: 1px solid #FFF;
+            margin: 0 0 20px 0;
+        }
+
+        table {
+            margin: 0px 0 0px 0;
+        }
+
+            table tr th, table tr td {
+                background: #BBB;
+                color: #FFF;
+                padding: 7px 4px;
+                text-align: left;
+            }
+
+            table tr td {
+                background: #DDD;
+                color: #444;
+                border-top: 1px solid #FFF;
+            }
+
+        /* Image Transitions */
+        ul#images {
+            margin: 0 15px 10px 0;
+            padding: 0;
+            list-style: none;
+            position: relative;
+        }
+
+            ul#images li {
+                display: block;
+                overflow: hidden;
+                padding: 0;
+                float: left;
+                width: 155px;
+                height: 300px;
+            }
+
+        /**
+Stylesheet for SooperFish by www.SooperThemes.com
+Author: Jurriaan Roelofs
+**/
+
+        /* Configuration of menu width */
+        html body ul.sf-menu ul, html body ul.sf-menu ul li {
+            width: 200px;
+        }
+
+            html body ul.sf-menu ul ul {
+                margin: 0 0 0 200px;
+            }
+
+        /* Framework for proper showing/hiding/positioning */
+        ul.sf-menu, ul.sf-menu * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul.sf-menu {
+            display: block;
+            position: relative;
+        }
+
+            ul.sf-menu li {
+                display: block;
+                list-style: none;
+                float: left;
+                position: relative;
+            }
+
+                ul.sf-menu li:hover {
+                    visibility: inherit; /* fixes IE7 'sticky bug' */
+                }
+
+            ul.sf-menu a {
+                display: block;
+                position: relative;
+            }
+
+            ul.sf-menu ul {
+                position: absolute;
+                left: 0;
+                width: 150px;
+                top: auto;                left: -999999px;
+            }
+
+                ul.sf-menu ul a {
+                    zoom: 1;
+                    z-index:10;/* IE6/7 fix */
+                }
+
+                ul.sf-menu ul li {
+                    float: left; /* Must always be floated otherwise there will be a rogue 1px margin-bottom in IE6/7 */
+                    width: 150px;
+                }
+
+                ul.sf-menu ul ul {
+                    top: 0;
+                    margin: 0 0 0 150px;
+                }
+
+                    ul.sf-menu li:hover ul, ul.sf-menu li:focus ul, ul.sf-menu li.sf-hover ul,
+                    ul.sf-menu ul li:hover ul, ul.sf-menu ul li:focus ul, ul.sf-menu ul li.sf-hover ul,
+                    ul.sf-menu ul ul li:hover ul, ul.sf-menu ul ul li:focus ul, ul.sf-menu ul ul li.sf-hover ul,
+                    ul.sf-menu ul ul ul li:hover ul, ul.sf-menu ul ul ul li:focus ul, ul.sf-menu ul ul ul li.sf-hover ul {
+                        left: auto;
+                    }
+
+                        ul.sf-menu li:hover ul ul, ul.sf-menu li:focus ul ul, ul.sf-menu li.sf-hover ul ul,
+                        ul.sf-menu ul li:hover ul ul, ul.sf-menu ul li:focus ul ul, ul.sf-menu ul li.sf-hover ul ul,
+                        ul.sf-menu ul ul li:hover ul ul, ul.sf-menu ul ul li:focus ul ul, ul.sf-menu ul ul li.sf-hover ul ul,
+                        ul.sf-menu ul ul ul li:hover ul ul, ul.sf-menu ul ul ul li:focus ul ul, ul.sf-menu ul ul ul li.sf-hover ul ul {
+                            left: -999999px;
+                        }
+
+        /* autoArrows CSS */
+        span.sf-arrow {
+            width: 7px;
+            height: 7px;
+            position: absolute;
+            top: 20px;
+            right: 5px;
+            display: block;
+            background: url(../images/arrows-black.png) no-repeat 0 0;
+            overflow: hidden; /* making sure IE6 doesn't overflow and expand the box */
+            font-size: 1px;
+        }
+
+        ul ul span.sf-arrow {
+            right: 5px;
+            top: 20px;
+            background-position: 0 100%;
+        }
+
+        /* Theming the menu */
+        ul#nav {
+            float: left;
+        }
+
+            ul#nav ul {
+                background: #ddd;
+                /*margin-top: 5px;*/
+                padding-bottom: 15px;
+            }
+
+            ul#nav li a {
+                padding: 3px 5px 5px 25px;
+                font: 145% 'Yanone Kaffeesatz', arial, sans-serif;
+                text-shadow: 1px 1px #323232;
+                text-decoration: none;
+                color: #FFF;
+                margin-right: 2px;
+            }
+
+                ul#nav li a:hover, ul#nav li a:focus, ul#nav li.selected a, ul#nav li.selected a:hover, ul#nav li.selected a:focus {
+                    color: #FFF;
+                    text-shadow: 1px 1px #323232;
+                }
+
+            ul#nav ul li a {
+                color: black;
+            }
+
+                ul#nav ul li a:hover {
+                    color: #09D4FF;
+                    margin-right: 2px;
+                }
+
+        /* Image Transitions */
+        ul#images {
+            margin: 0 15px 10px 0;
+            padding: 0;
+            position: relative;
+        }
+
+            ul#images li {
+                display: block;
+                overflow: hidden;
+                padding: 0;
+                float: left;
+                width: 155px;
+                height: 300px;
+                list-style: none;
+            }
+
+        .footer {
+            color: #4e5766;
+            padding: 8px 0px 0px 0px;
+            margin: 0px auto;
+            text-align: center;
+            line-height: normal;
+        }
+    </style>
+</head>
+<body style="background-color: #0ca3d2">
+    <form id="form1" runat="server" enctype="multipart/form-data" method = "post">
+        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
+
+        <div id="main">
+            <header>
+                <div id="logo">
+                    <div id="logo_text">
+                        <!-- class="logo_colour", allows you to change the colour of the text -->
+
+                        <div style="float: right">
+                            <h3>
+                                <asp:Label ID="lblUser" runat="server" Style="float: right" Text="Hello"></asp:Label>
+                            </h3>
+                            <asp:LinkButton ID="lbnLogut" Style="float: right;color:red;font-weight:bold" Text="Logout" runat="server" OnClick="lbnLogut_Click"></asp:LinkButton>
+                        </div>
+                        
+                        <img src="/images/nacre-logo2.png" height="100" width="14%" ></img>
+                        <div style="float: right;position: absolute;right: 590px;top: 50px"><h1 style="color:white">CHIT FUND</h1> </div>
+              <img alt="" src="/images/call-us.png" style="float: right;position: absolute;right: 220px;top: 50px" />
+                    </div>
+                </div>
+                <div id="menu">
+                <nav>
+                    <ul class="sf-menu" id="nav">
+                        <li class="selected"><a href="/home.aspx">HOME</a></li>
+                        <li><a href="#">Profile </a>
+                            <ul>
+                                <li><a href="/ShowProfile.aspx">View Profile</a></li>
+                                <li><a href="/ChangePassword.aspx">Change Password</a></li>
+                            </ul>
+                        </li>
+                         <li><a href="#">Manage Subscriber</a>
+                            <ul>
+                                <li><a href="/operator/SubRegistration.aspx">Customer Registration</a></li>
+                                 <li><a href="/operator/CustEnquiry.aspx">Enquiry Customer</a></li>
+                               
+                                 <li><a href="/operator/ViewSubscriber.aspx">ViewSubscriber</a></li>
+                               <li><a href="/operator/ManageCust.aspx">Update Customer</a></li>
+                               
+                            </ul>
+                        </li>
+                        <li><a href="/#">Registration</a>
+
+                            <ul>
+                                <li><a href="/operator/RegistrationPage.aspx"> User Registration</a></li>
+                               
+                               
+                            </ul>
+                        </li>
+                       
+                        <li><a href="#">Manage Chit</a>
+                            <ul>
+                                <li><a href="/Admin/CreateChit.aspx">CreateChit</a></li>
+                                <li><a href="/Admin/UpdateChit.aspx">CreateChit</a></li>
+                             
+                             
+                                   <li><a href="/operator/ManageCollections.aspx">ManageCollections</a></li>
+                                <li><a href="/operator/AddRegisteredSubscriber.aspx">AddSubscriber</a></li>
+                                <li><a href="/operator/Removesubscriber.aspx">RemoveSubscriber</a></li>
+                                <li><a href="/operator/Report.aspx">Create Reports</a></li>
+                               
+                            </ul>
+                        </li>
+                        <li><a href="/operator/Auction.aspx"">Auction</a>
+                           
+                        </li>
+                        <%--<li><a href="#">MENU</a>
+                            <ul>
+                                <li><a href="#">Drop Down One</a></li>
+                                <li><a href="#">Drop Down Two</a>
+                                    <ul>
+                                        <li><a href="#">Sub Drop Down One</a></li>
+                                        <li><a href="#">Sub Drop Down Two</a></li>
+                                        <li><a href="#">Sub Drop Down Three</a></li>
+                                        <li><a href="#">Sub Drop Down Four</a></li>
+                                        <li><a href="#">Sub Drop Down Five</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Drop Down Three</a></li>
+                                <li><a href="#">Drop Down Four</a></li>
+                                <li><a href="#">Drop Down Five</a></li>
+                            </ul>
+                        </li>--%>
+                        <%--<li><a href="contact.aspx">CONTACT US</a></li>--%>
+                        <li><a href="/operator/Report.aspx".aspx">Reports</a></li>
+                    </ul>
+
+                </nav>
+                    </div>
+            </header>
+
+
+            <!-- javascript at the bottom for fast page loading -->
+           
+           <%-- <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
+            <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+            <script type="text/javascript" src="js/jquery.kwicks-1.5.1.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#images').kwicks({
+                        max: 600,
+                        spacing: 2
+                    });
+                    $('ul.sf-menu').sooperfish();
+                });
+            </script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#images').kwicks({
+                        max: 600,
+                        spacing: 2
+                    });
+                    $('ul.sf-menu').sooperfish();
+                });
+            </script>
+           --%> <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+            <div id="footer" style="clear:both">
+                <div id="footertop">
+                    <p style="margin-left: 300px; text-align: center">&nbsp;</p>
+                    <p style="margin-left: 00px; text-align: center">
+                        &nbsp;Nacre Software Services Pvt. Ltd. © 2013-2014 All Rights Reserved. 
+            <br />
+                        <a href="#">Home</a> | <a href="#">Blog</a> | <a href="#">Downloads</a> | 
+            <a href="#">Default</a> | <a href="#">Login &amp; Privacy</a>
+                    </p>
+                </div>
+            </div>
+    </form>
+</body>
+</html>

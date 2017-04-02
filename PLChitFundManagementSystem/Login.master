@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Login.master.cs" Inherits="Login" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-color: #0ca3d2">
+    <form id="form1" runat="server">
+        <div style="height:100px">
+            <div id="logo">
+                    <div id="logo_text">
+                        <!-- class="logo_colour", allows you to change the colour of the text -->
+
+                        <div style="float: right">
+                            <h3>
+                                
+                            
+                        </div>
+                        
+                        <img src="/images/nacre-logo2.png" style ="height:110px; width: 140px;" ></img>
+                        <div style="float: right;position: absolute;right: 590px;top: 50px"><h1 style="color:white">CHIT FUND</h1> </div>
+              <img alt="" src="/images/call-us.png" style="float: right;position: absolute;right: 220px;top: 50px" />
+                    </div>
+                </div>
+
+        </div>
+    <div>
+
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

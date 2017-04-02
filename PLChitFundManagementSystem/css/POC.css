@@ -1,0 +1,74 @@
+﻿#userError, #emailError, #pwdError, #cPwdError, #mobError, #genderError, #departmentError, #deptNameError, #deptLocationError {
+    color: red;
+}
+ .td1 {
+            text-align:right;
+            font:normal 15px verdana;
+        }
+        
+        .title {
+            text-align:center;
+            font:bold 30px TimesRoman;
+            color:blueviolet;
+        }
+        .auto-style1 {
+            width: 150px;
+        }
+        .auto-style2 {
+            text-align: right;
+            font: normal 15px verdana;
+            width: 150px;
+        }
+        .auto-style3 {
+            text-align: right;
+            font: normal 15px verdana;
+            width: 90px;
+        }
+        #deptNameError, #deptLocationError {
+            font:15px TimesRoman;
+        }
+       
+        #backgroundpopup {
+            display: none;
+            position: fixed;
+            _position: absolute; /* hack for internet explorer 6*/
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: #000000;
+            border: 1px solid #cecece;
+            z-index: 1;
+        }
+        #div1{
+            display: none;
+            position: fixed;
+            _position: absolute; /* hack for internet explorer 6*/
+            height: 384px;
+            width: 408px;
+            background: #FFFFFF;
+            border: 2px solid #cecece;
+            z-index: 2;
+            padding: 12px;
+            font-size: 13px;
+            background-color:aqua;
+        }
+        
+            #div1 h1 {
+                text-align: center;
+                color: #6FA5FD;
+                font-size: 22px;
+                font-weight: 700;
+                border-bottom: 1px dotted #D3D3D3;
+                padding-bottom: 2px;
+                margin-bottom: 20px;
+            }
+            #divNominee h1 {
+                text-align: center;
+                color: #6FA5FD;
+                font-size: 22px;
+                font-weight: 700;
+                border-bottom: 1px dotted #D3D3D3;
+                padding-bottom: 2px;
+                margin-bottom: 20px;
+            }

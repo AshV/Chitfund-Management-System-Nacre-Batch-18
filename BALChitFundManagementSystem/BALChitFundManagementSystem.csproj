@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BBD2445A-5A8B-471E-B3C1-DE667D13FF2E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BALChitFundManagementSystem</RootNamespace>
+    <AssemblyName>BALChitFundManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DALChitFundManagementSystem, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DALChitFundManagementSystem\bin\Debug\DALChitFundManagementSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=5.1.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DALChitFundManagementSystem\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BE\AreaAgentChit.cs" />
+    <Compile Include="BE\BEAdmin.cs" />
+    <Compile Include="BE\BEAgent.cs" />
+    <Compile Include="BE\BE_ChitdocumentproofId.cs" />
+    <Compile Include="BE\BE_Area.cs" />
+    <Compile Include="BE\BE_Collection.cs" />
+    <Compile Include="BE\BEOperator.cs" />
+    <Compile Include="BE\BE_CustomerAddressproof.cs" />
+    <Compile Include="BE\BE_CustomerIdProof.cs" />
+    <Compile Include="BE\BE_Subscriber.cs" />
+    <Compile Include="BE\BE_Address.cs" />
+    <Compile Include="BE\BE_AddressProofType.cs" />
+    <Compile Include="BE\BE_Chit.cs" />
+    <Compile Include="BE\BE_City.cs" />
+    <Compile Include="BE\BE_Customer.cs" />
+    <Compile Include="BE\BE_CustomerDocument.cs" />
+    <Compile Include="BE\BE_CustomerFromChit.cs" />
+    <Compile Include="BE\BE_Guaranter.cs" />
+    <Compile Include="BE\BE_IdProofType.cs" />
+    <Compile Include="BE\BE_Login.cs" />
+    <Compile Include="BE\BE_Names.cs" />
+    <Compile Include="BE\BE_Nominee.cs" />
+    <Compile Include="BE\BE_State.cs" />
+    <Compile Include="BE\BE_User.cs" />
+    <Compile Include="BE\BE_UserType.cs" />
+    <Compile Include="BE\GetCityState.cs" />
+    <Compile Include="BE\MonthlyInstallment.cs" />
+    <Compile Include="BE\subscriber.cs" />
+    <Compile Include="BL\BLAuction.cs" />
+    <Compile Include="BL\BLMangeChit.cs" />
+    <Compile Include="BL\BLRegistration.cs" />
+    <Compile Include="BL\BLReport.cs" />
+    <Compile Include="BL\BLSubscriber.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

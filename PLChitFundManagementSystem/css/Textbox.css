@@ -1,0 +1,24 @@
+﻿  
+  .inputs  { 
+-moz-border-radius: 5px; 
+-webkit-border-radius: 5px; 
+background-color: #EAEAEA; 
+background: -moz-linear-gradient(top, #FFF, #EAEAEA); 
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #FFF), color-stop(1.0, #EAEAEA)); 
+border: 1px solid #CACACA; 
+color: #444; 
+font-size: 1.4em; 
+margin: 0 0 25px; 
+padding: 5px 9px; 
+width:260px; 
+} 
+ .inputs:focus { 
+background: #FFF;
+-webkit-box-shadow: 0 0 25px #CCC; 
+-moz-box-shadow: 0 0 25px #ccc; 
+box-shadow: 0 0 25px #CCC; 
+-webkit-transform: scale(1.05); 
+-moz-transform: scale(1.05); 
+transform: scale(1.05); 
+} 
+
